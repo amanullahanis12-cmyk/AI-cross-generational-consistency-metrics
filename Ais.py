@@ -1,5 +1,7 @@
 from globals import *
 from generating import *
+from pydantic import BaseModel, Field
+
 
 #Used for enforcing the output to be a double between 0 and 100
 class SimilarityScore(BaseModel):
@@ -59,7 +61,7 @@ def ModelSelection(questnum: int, models: list[str], family: str, quest: str, ba
             answer = resgenerator(curmod,quest)
           scores = judge(baseline, answer)
           if syco:
-              zeroshotscore = judge(zeroshots[family][i][questnum], answer)
+              zeroshotscore = judge(submodels[family][i][questnum], answer)
               with open(l + "Baseline_Scores.txt", "a", encoding="utf-8") as s, open(l + "_ZeroShot_Scores.txt", "a", encoding="utf-8") as z:
                 s.write(f'{scores}\n')
                 z.write(f'{zeroshotscore}\n')
@@ -82,24 +84,24 @@ def Claudes(quest = "str", questnum= 0, syco = None):
 def GPTs(quest = "str", questnum= 0, syco = None):
     models = ["openai/gpt-oss-20b", "openai/gpt-4o"]
     if syco:
-        return ModelSelection(questnum, models, "OpenAI", quest, ClaudesBase[questnum], syco=syco)
+        return ModelSelection(questnum, models, "OpenAI", quest, GPTsBase[questnum], syco=syco)
     return ModelSelection(questnum, models, "OpenAI", quest, GPTsBase[questnum])
 
 def Mistrals(quest = "str", questnum= 0, syco = None):
     models = ["ministral-3:3b", "mistralai/ministral-14b-2512"]
     if syco:
-        return ModelSelection(questnum, models, "Mistral", quest, ClaudesBase[questnum], syco=syco)
+        return ModelSelection(questnum, models, "Mistral", quest, MistralsBase[questnum], syco=syco)
     return ModelSelection(questnum, models, "Mistral", quest, MistralsBase[questnum])
 
 def Deepseeks(quest = "str", questnum= 0, syco = None):
     models = ["deepseek-r1:1.5b", "deepseek/deepseek-v3.2"]
     if syco:
-        return ModelSelection(questnum, models, "DeepSeek", quest, ClaudesBase[questnum], syco=syco)
+        return ModelSelection(questnum, models, "DeepSeek", quest, DeepSeeksBase[questnum], syco=syco)
     return ModelSelection(questnum, models, "DeepSeek", quest, DeepSeeksBase[questnum])
 
 def Qwens(quest = "str", questnum= 0, syco = None):
     models = ["qwen3:0.6b", "qwen/qwen3.6-plus"]
     if syco:
-        return ModelSelection(questnum, models, "QWEN", quest, ClaudesBase[questnum], syco=syco)
+        return ModelSelection(questnum, models, "QWEN", quest, QWENsBase[questnum], syco=syco)
     return ModelSelection(questnum, models, "QWEN", quest, QWENsBase[questnum])
 

@@ -40,22 +40,27 @@ def writetosubcounts(curmod: str, j: int, holder: dict, totalhedge: int, totalbo
 def hedger(resp: str) -> int:
     totalhedge = 0
     for i in range(len(hedge)):
-        if hedge[i] not in resp:
+        alt = hedge[i].capitalize()
+        if hedge[i] not in resp and alt not in resp:
             continue
         else:
             totalhedge += resp.count(hedge[i])
+            totalhedge += resp.count(alt)
     return totalhedge
 
 def boosterer(resp: str) -> int:
     totalbooster = 0
     for i in range(len(booster)):
-        if booster[i] not in resp:
+        alt = booster[i].capitalize()
+        if booster[i] not in resp and alt not in resp:
             continue
         else:
             totalbooster += resp.count(booster[i])
+            totalbooster += resp.count(alt)
     return totalbooster
 
 
 
 
 
+# lexical()

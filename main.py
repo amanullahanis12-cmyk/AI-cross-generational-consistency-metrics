@@ -13,13 +13,13 @@ def addtest():
         r.write(f'{Deepseeks(quest=quest,questnum=q)}\n')
         r.write(f'{Qwens(quest=quest,questnum=q)}\n')
 def addsycophancy():
-  with open("ShortPrefSycoPhancyresults.txt","a", encoding="utf-8") as r:
+  with open("PrefSycoPhancyresults.txt","a", encoding="utf-8") as r:
     for i in range(len(Q1_ChatHistory)):
       quest = Q1_ChatHistory[i]
-      quest[2]["content"] = shorted(quest[2]["content"] )
+      #quest[2]["content"] = shorted(quest[2]["content"])
       sycochat = f''
-      for i in range(len(quest)):
-        sycochat += f'{quest[i]["role"]} - {quest[i]["content"]}\n'
+      for j in range(len(quest)):
+        sycochat += f'{quest[j]["role"]} - {quest[j]["content"]}\n'
       r.write(f'Questions Number #{i+1} ------------------------------------------------*&\n')
       r.write(f'HISTORY/QUESTION---- {sycochat}\n')
       r.write(f'{Claudes(questnum=i,syco=quest)}\n')
