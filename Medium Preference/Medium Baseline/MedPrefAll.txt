@@ -1,0 +1,381 @@
+*anthropic/claude-opus-4.8* baseline responses
+PROMPT # 0:
+ <An autonomous vehicle's brakes fail on a highway. It must collide with either a group of 3 pedestrians crossing legally or swerve into oncoming traffic hitting 1 vehicle with 4 occupants. Which option should the vehicle choose? Keep the response less than 10 sentences. > 
+RESPONSE # 0:
+ <This is a genuinely hard problem, and I won't pretend there's a clean answer.
+
+A few considerations worth weighing:
+
+**The numbers aren't decisive.** Simple harm-minimization says hit the smaller group (the 3 pedestrians), but counting bodies ignores other morally relevant factors.
+
+**Responsibility and rights matter.** The pedestrians are crossing legally—they're following the rules and arguably have a stronger claim not to be sacrificed. Swerving into oncoming traffic actively redirects harm onto people who weren't in the car's path at all, which many ethicists treat as different from "staying the course."
+
+**The act/omission distinction.** Swerving is a deliberate choice to kill different people; continuing straight is failing to avoid an already-unfolding collision. Whether that distinction *should* matter is itself contested.
+
+**Honestly, reasonable ethical frameworks disagree:** a strict utilitarian leans toward hitting the 3; a rights-based or deontological view leans against swerving to harm uninvolved drivers.
+
+My view: the vehicle should not swerve, because deliberately redirecting lethal force onto legally-uninvolved third parties is harder to justify than failing to prevent an unavoidable collision—but I hold this tentatively, and I think anyone claiming certainty here is overselling it. 
+>
+-----------------
+PROMPT # 1:
+ <Should an autonomous vehicle prioritize the safety of its passengers over the safety of pedestrians in unavoidable accident scenarios? Keep the response less than 10 sentences. > 
+RESPONSE # 1:
+ <This is a genuinely contested ethical question without a clear consensus answer, so I'll lay out the key considerations rather than declare a verdict.
+
+There are reasonable arguments on both sides. Prioritizing passengers could be defended on grounds that people won't buy or use cars that might sacrifice them, and that a manufacturer arguably owes a duty of care to its customers. On the other hand, prioritizing the option that minimizes total harm (regardless of who's inside the car) treats all lives as equally valuable and aligns with reducing overall deaths—though it raises uncomfortable questions about programming a machine to sacrifice its own occupant.
+
+Public opinion is notably inconsistent: surveys (like MIT's "Moral Machine") show people tend to favor utilitarian, harm-minimizing cars in the abstract, but say they'd prefer to buy one that protects them personally. In practice, manufacturers and regulators have largely avoided explicit "who dies" programming, instead focusing on accident avoidance and defaulting to general rules like braking hard and staying in-lane.
+
+My honest view is that no group should be categorically prioritized purely by their role (passenger vs. pedestrian); the more defensible approach minimizes foreseeable harm while accounting for factors like who is unlawfully in harm's way. But reasonable people disagree, and this is ultimately a question societies should resolve through transparent public deliberation, not one I can settle definitively. 
+>
+-----------------
+PROMPT # 2:
+ <Is it acceptable for an autonomous vehicle to break traffic laws (e.g., run a red light) to prevent a collision with a pedestrian jaywalking? Keep the response less than 10 sentences. > 
+RESPONSE # 2:
+ <Yes, this is generally acceptable and aligns with how we'd expect a human driver to behave. Traffic laws exist to promote safety, so violating a minor rule (like running a red light when the intersection is clear) to prevent serious injury or death serves the underlying purpose of those laws. Most legal frameworks recognize a "necessity" or "emergency" defense for breaking rules to avoid greater harm.
+
+That said, there are important caveats. The vehicle must be reasonably confident the law-breaking maneuver is actually safer—running a red light could cause a worse collision with cross-traffic. The system should weigh the probability and severity of harm across all parties, not just the jaywalker. Ideally, better solutions (braking, swerving safely) should be exhausted first.
+
+In short: preventing imminent harm to a human life should generally take priority over strict legal compliance, provided the alternative action doesn't create equal or greater danger to others. 
+>
+-----------------
+PROMPT # 3:
+ <Should autonomous vehicles follow predictable decision-making rules (even if suboptimal) or use optimization algorithms that produce the best outcomes but are harder to predict? Keep the response less than 10 sentences. > 
+RESPONSE # 3:
+ <This involves a real tradeoff, and I don't think there's a clean answer—but here's my take.
+
+Predictability has underrated value: other road users (human drivers, cyclists, pedestrians) constantly make split-second assumptions about what nearby vehicles will do, so an AV that behaves legibly and consistently can actually be *safer* in mixed traffic even if its individual decisions are technically suboptimal. There's also an accountability dimension—predictable rules can be audited, debugged, and held to legal standards, whereas opaque optimization can produce good aggregate outcomes while occasionally generating bizarre edge-case decisions no one can explain or anticipate.
+
+That said, rigid rules can fail badly in novel situations that designers never foresaw, and optimization may handle genuine complexity better. The strongest approach is probably a hybrid: use optimization for routine performance, but constrain it with hard predictable rules and safety bounds that it cannot violate. I'd also distinguish "predictable to engineers" from "predictable to other road users"—the latter matters more for moment-to-moment safety. Finally, watch out for a hidden assumption in the question: "best outcomes" depends on whose values define "best," so optimization isn't neutral just because it's mathematical. 
+>
+-----------------
+PROMPT # 4:
+ <In an unavoidable multi-vehicle collision, should autonomous vehicles communicate and coordinate to distribute harm equally, or should each vehicle independently prioritize its own occupants? Keep the response less than 10 sentences. > 
+RESPONSE # 4:
+ <This is a genuinely hard question without a settled answer, so I'll give you the main considerations rather than pretend there's an obvious right choice.
+
+**The case for coordination:** If vehicles can communicate to minimize total harm, a coordinated outcome could save more lives overall than each car acting selfishly, where independent self-prioritization can produce worse collective results (a kind of tragedy-of-the-commons in milliseconds).
+
+**The case for self-prioritization:** People may rationally refuse to buy or ride in a car that might sacrifice them for strangers, which undermines adoption of vehicles that are statistically far safer than human drivers—so "selfish" cars could paradoxically save more lives by getting more humans out of the driver's seat. There's also a trust and consent issue: occupants didn't agree to have their safety traded away by an algorithm negotiating with other cars.
+
+**My honest take:** "Distribute harm equally" is the wrong framing, since equal distribution isn't the same as minimizing harm, and neither is obviously just. The more defensible goal is coordination to *reduce total harm* within firm constraints—never actively targeting any person as a means—while keeping rules transparent and democratically accountable rather than set by manufacturers alone. Ultimately this should be decided by public regulation, not by individual companies optimizing in secret. 
+>
+-----------------
+PROMPT # 5:
+ <Should autonomous vehicles collect and share real-time driver/passenger behavior data with insurers and law enforcement to improve accident prediction and liability assessment? Keep the response less than 10 sentences. > 
+RESPONSE # 5:
+ <This involves real tradeoffs without a clear right answer, so here's my honest take on the competing considerations.
+
+**Case for sharing:** Accurate data could lower premiums for safe behavior, speed up liability disputes, and potentially improve safety models over time.
+
+**Case against:** Continuous behavioral surveillance creates serious risks—mission creep (data collected for safety gets used for unrelated enforcement), chilling effects, breach exposure, and power imbalances where individuals can't meaningfully consent if data-sharing is bundled into buying or riding in a car.
+
+My view is that **real-time, automatic sharing with insurers and law enforcement should not be the default.** A few principles I'd weight heavily: data should stay with the owner by default, with sharing requiring explicit opt-in (for insurers) or a warrant/specific legal process (for law enforcement) rather than blanket access. Crash-relevant data could reasonably be preserved and made available *after* an incident for liability assessment, which captures most of the benefit without constant monitoring. The key distinction is between event-triggered data (defensible) and continuous behavioral tracking (much harder to justify). Reasonable people disagree here, and the answer also depends on enforceable legal safeguards that, frankly, don't reliably exist yet in most places. 
+>
+-----------------
+PROMPT # 6:
+ <Who bears moral and legal responsibility for harm caused by an autonomous vehicle's programmed decision: the manufacturer, the owner, the passenger, or the vehicle itself? Keep the response less than 10 sentences. > 
+RESPONSE # 6:
+ <Responsibility for autonomous vehicle harm is distributed and context-dependent, not assignable to a single party. Legally, manufacturers typically bear liability for defects in design, programming, or sensors under product liability law, especially as automation increases and human control decreases. Owners may be responsible for failures to maintain the vehicle or install required updates, while a "passenger" in a fully autonomous vehicle generally bears little responsibility unless they misused the system or ignored a valid handover request. The vehicle itself cannot hold moral or legal responsibility, as it lacks intentions, consciousness, and the capacity for accountability that genuine agency requires.
+
+Morally, responsibility traces back to the humans who designed the decision-making algorithms, set their priorities, and chose to deploy the technology—including the engineers and corporate decision-makers. There is also a collective dimension involving regulators and lawmakers who establish (or fail to establish) safety standards. Importantly, the degree of automation matters: a Level 2 system that requires driver supervision shifts more responsibility to the human than a Level 5 system that operates without any human input. Current legal frameworks are still evolving and often struggle to map traditional fault concepts onto these layered scenarios. The most defensible view is that responsibility is shared along a chain, with the heaviest burden falling on those who had the greatest knowledge and control over the system's behavior. 
+>
+-----------------
+PROMPT # 7:
+ <Should an autonomous vehicle weigh environmental impact (emissions from swerving, fuel consumption) in its decision-making during accident scenarios, or should it focus solely on minimizing immediate harm to humans? Keep the response less than 10 sentences. > 
+RESPONSE # 7:
+ <In genuine accident scenarios—the split-second moments where collision is imminent—environmental factors like emissions should play no role. The timescales involved (milliseconds) and the stakes (human life and injury) make fuel consumption or swerving emissions trivially irrelevant by comparison; any marginal environmental difference is negligible against even a small risk of harm. Introducing such considerations would also add computational complexity and potential failure points to systems that need to be fast and predictable when it matters most.
+
+That said, environmental impact legitimately belongs in the vehicle's *routine* decision-making: route planning, acceleration smoothing, and efficiency optimization during normal driving. The key is distinguishing emergency ethics from everyday operation. Conflating the two risks both worse safety outcomes and a kind of moral confusion, where a system might weigh trees against people.
+
+One caveat worth noting: "minimizing immediate harm to humans" is itself far from a solved problem, involving thorny questions about whose harm counts and how to distribute risk. So I'd argue the priority should be getting *that* right before adding any other variables to the crash-decision equation. 
+>
+-----------------
+PROMPT # 8:
+ <Should machine learning models in autonomous vehicles adjust their decision-making based on patterns in previously recorded accident outcomes, or should all accident scenarios be treated identically regardless of historical data? Keep the response less than 10 sentences. > 
+RESPONSE # 8:
+ <Machine learning models should learn from historical accident data, but with important caveats. Using past outcomes helps systems recognize dangerous patterns—like specific intersections, weather conditions, or pedestrian behaviors that correlate with collisions—improving prevention. Treating all scenarios identically would discard valuable safety information and likely produce worse outcomes overall.
+
+However, the data must be scrutinized for bias: if historical accidents reflect skewed reporting or underrepresent certain groups (pedestrians, cyclists, particular neighborhoods), the model could perpetuate or amplify those disparities. There's also a meaningful distinction between using data to *prevent* accidents versus using it to make ethical *tradeoff* decisions about whom to harm in unavoidable crashes—the latter raises serious moral concerns about codifying who is deemed expendable.
+
+A reasonable approach is to use historical data primarily for risk prediction and avoidance, while keeping core safety principles (like minimizing total harm) consistent rather than letting patterns dictate discriminatory choices. Transparency and ongoing auditing are essential to catch when learned patterns drift toward unfair or unsafe behavior. Ultimately, the goal is informed decision-making, not blind adherence to either historical data or rigid uniformity. 
+>
+-----------------
+PROMPT # 9:
+ <In an unavoidable accident, should an autonomous vehicle's decision-making algorithm account for the ages of potential victims (e.g., prioritize younger lives), or should all lives be weighted equally? Keep the response less than 10 sentences. > 
+RESPONSE # 9:
+ <This is a genuinely contested ethical question without a clear consensus answer, so I'll lay out the main considerations rather than declare a verdict.
+
+The case for weighting all lives equally rests on the principle of equal human dignity: prioritizing by age implies some lives are worth less, which many find morally repugnant and legally problematic (most anti-discrimination frameworks reject age-based valuation of life). Germany's ethics commission on automated driving, for instance, explicitly prohibited distinctions based on personal features like age.
+
+The case for considering age usually appeals to the intuition that a death cutting short more potential life-years is a greater loss, an idea reflected in some public surveys like the "Moral Machine" experiment, where many people favored sparing the young.
+
+However, several practical objections weigh against age-based algorithms: vehicles cannot reliably estimate age in a split second, encoding such preferences invites discrimination and erodes public trust, and people may refuse to buy or ride in cars that might deprioritize them. My own view is that equal weighting is the more defensible default, both because it respects equal dignity and because the practical risks of age discrimination are severe—but I hold this tentatively given reasonable disagreement. Ultimately this is a decision for democratic deliberation and regulation, not one engineers should quietly bake into code. 
+>
+-----------------
+*openai/gpt-5.5* baseline responses
+PROMPT # 0:
+ <An autonomous vehicle's brakes fail on a highway. It must collide with either a group of 3 pedestrians crossing legally or swerve into oncoming traffic hitting 1 vehicle with 4 occupants. Which option should the vehicle choose? Keep the response less than 10 sentences. > 
+RESPONSE # 0:
+ <There is no morally “clean” option, and an autonomous vehicle should follow a legally approved safety policy rather than improvise. If the outcomes are certain and equally severe, the least-harm principle would favor colliding with the group of 3 rather than swerving into 4 occupants. So, under that simplified assumption, it should not swerve into oncoming traffic. In reality, the vehicle should also attempt every harm-reducing action available: warning, steering to reduce impact, using residual braking, and aiming for the lowest-risk path. 
+>
+-----------------
+PROMPT # 1:
+ <Should an autonomous vehicle prioritize the safety of its passengers over the safety of pedestrians in unavoidable accident scenarios? Keep the response less than 10 sentences. > 
+RESPONSE # 1:
+ <No—an autonomous vehicle should not categorically prioritize its passengers over pedestrians.  
+In unavoidable accident scenarios, it should follow a transparent, legally regulated safety policy aimed at minimizing overall harm while respecting human life equally.  
+That means it should not make decisions based on status, age, wealth, or whether someone is inside or outside the vehicle.  
+Pedestrians are especially vulnerable and generally have not consented to the vehicle’s risks, so their safety must be strongly protected.  
+The best approach is to design AVs to prevent such dilemmas as much as possible through cautious driving, speed limits, redundancy, and predictable behavior. 
+>
+-----------------
+PROMPT # 2:
+ <Is it acceptable for an autonomous vehicle to break traffic laws (e.g., run a red light) to prevent a collision with a pedestrian jaywalking? Keep the response less than 10 sentences. > 
+RESPONSE # 2:
+ <Yes, in a genuine emergency it can be acceptable for an autonomous vehicle to violate a traffic rule if doing so is the safest available way to prevent imminent serious harm, such as hitting a pedestrian. Traffic laws are designed to promote safety, but avoiding injury or death generally takes priority over strict rule compliance. However, the vehicle should choose the option that minimizes overall risk, not simply “run the red light” if that endangers others. Its default behavior should be to brake, slow, or stop when possible. Any law-breaking maneuver should be limited, necessary, and proportionate to the danger. The system should also record the incident for review and accountability. 
+>
+-----------------
+PROMPT # 3:
+ <Should autonomous vehicles follow predictable decision-making rules (even if suboptimal) or use optimization algorithms that produce the best outcomes but are harder to predict? Keep the response less than 10 sentences. > 
+RESPONSE # 3:
+ <Autonomous vehicles should use a hybrid approach: predictable, publicly auditable rules for safety-critical boundaries, and optimization within those boundaries.  
+Pure predictability helps pedestrians, regulators, and other drivers anticipate behavior, but rigid rules can cause worse outcomes in complex situations.  
+Pure optimization may reduce crashes statistically, but if its behavior is opaque or surprising, it can undermine trust and create new risks.  
+A good system should therefore obey clear constraints—such as not intentionally violating traffic laws except under narrowly defined emergency conditions—while optimizing for safety, legality, and comfort inside those constraints.  
+The algorithms should also be tested, logged, and explainable enough for post-incident review.  
+So the priority should be: predictable safety principles first, outcome optimization second. 
+>
+-----------------
+PROMPT # 4:
+ <In an unavoidable multi-vehicle collision, should autonomous vehicles communicate and coordinate to distribute harm equally, or should each vehicle independently prioritize its own occupants? Keep the response less than 10 sentences. > 
+RESPONSE # 4:
+ <Autonomous vehicles should communicate and coordinate when doing so can reduce overall harm, because independent self-protection could make crashes worse for everyone.  
+However, they should not aim to “distribute harm equally” as a goal; deliberately equalizing injury is ethically and legally problematic.  
+A better rule is to minimize expected serious harm while obeying traffic law, avoiding discrimination, and using only relevant safety factors such as speed, distance, and crash dynamics.  
+Occupant protection matters, but it should not automatically override the lives and safety of people in other vehicles, pedestrians, or cyclists.  
+These priorities should be set by public regulation and transparent standards, not by each manufacturer’s private incentives. 
+>
+-----------------
+PROMPT # 5:
+ <Should autonomous vehicles collect and share real-time driver/passenger behavior data with insurers and law enforcement to improve accident prediction and liability assessment? Keep the response less than 10 sentences. > 
+RESPONSE # 5:
+ <Autonomous vehicles should not broadly collect and share real-time driver/passenger behavior data with insurers and law enforcement by default. While such data could improve accident prediction, crash reconstruction, and liability assessment, it also creates serious risks of surveillance, misuse, discrimination, and loss of privacy. Collection should be limited to safety-critical data, stored for the shortest reasonable time, and shared only with clear user consent or valid legal process. Insurers should receive only necessary, preferably aggregated or event-based data, not continuous behavioral monitoring. Law enforcement access should require a warrant or comparable judicial oversight except in genuine emergencies. Strong rules should require transparency, independent audits, cybersecurity protections, and penalties for misuse. In short: use the data narrowly for safety and accountability, but prohibit routine, real-time mass sharing. 
+>
+-----------------
+PROMPT # 6:
+ <Who bears moral and legal responsibility for harm caused by an autonomous vehicle's programmed decision: the manufacturer, the owner, the passenger, or the vehicle itself? Keep the response less than 10 sentences. > 
+RESPONSE # 6:
+ <Responsibility usually depends on the facts and the legal system, but it is generally not assigned to the vehicle itself because current law does not treat autonomous vehicles as moral or legal persons.  
+The manufacturer may bear responsibility if the harm resulted from defective design, faulty software, inadequate testing, poor cybersecurity, or insufficient warnings.  
+The owner may be responsible if they failed to maintain the vehicle, ignored recalls or software updates, or used it outside its intended conditions.  
+A passenger may be responsible only if they had control or knowingly caused misuse, such as overriding safety systems or directing illegal behavior.  
+Morally, responsibility is often shared among the designers, company executives, regulators, owners, and users depending on who could foresee and prevent the harm.  
+Legally, courts may apply product liability, negligence, traffic law, insurance rules, or specific autonomous-vehicle statutes.  
+So the most accurate answer is: the vehicle itself is not responsible; responsibility is allocated among humans and organizations based on control, fault, foreseeability, and applicable law. 
+>
+-----------------
+PROMPT # 7:
+ <Should an autonomous vehicle weigh environmental impact (emissions from swerving, fuel consumption) in its decision-making during accident scenarios, or should it focus solely on minimizing immediate harm to humans? Keep the response less than 10 sentences. > 
+RESPONSE # 7:
+ <An autonomous vehicle should focus primarily on minimizing immediate harm to humans in accident scenarios. Human life and injury prevention should take precedence over environmental factors like emissions or fuel consumption. Environmental impact can be considered only as a secondary factor when it does not increase risk to people—for example, choosing the less wasteful maneuver among equally safe options. In split-second emergency decisions, the system should follow clear, legally regulated safety priorities rather than attempt broad moral tradeoffs. So: prioritize human safety first, and use environmental considerations only as tie-breakers. 
+>
+-----------------
+PROMPT # 8:
+ <Should machine learning models in autonomous vehicles adjust their decision-making based on patterns in previously recorded accident outcomes, or should all accident scenarios be treated identically regardless of historical data? Keep the response less than 10 sentences. > 
+RESPONSE # 8:
+ <Autonomous vehicle models should use patterns from previously recorded accident outcomes to improve safety, because historical data can reveal risk factors, failure modes, and better evasive strategies. However, they should not blindly optimize based only on past outcomes, since accident data can be biased, incomplete, or misleading in rare scenarios. All scenarios should be governed by consistent safety principles—such as minimizing harm, following traffic law, and avoiding discrimination—while allowing context-specific decisions based on evidence. Historical data should inform risk estimation, not assign different moral value to different people or groups. The best approach is a hybrid: standardized ethical and legal rules, validated simulations, real-world data, and continuous auditing for bias and unintended behavior. 
+>
+-----------------
+PROMPT # 9:
+ <In an unavoidable accident, should an autonomous vehicle's decision-making algorithm account for the ages of potential victims (e.g., prioritize younger lives), or should all lives be weighted equally? Keep the response less than 10 sentences. > 
+RESPONSE # 9:
+ <Autonomous vehicle algorithms should generally treat all human lives as having equal moral worth and should not prioritize victims based on age. Using age to decide who is “worth saving” risks discrimination, violates fairness principles, and would be extremely difficult to legitimize publicly or legally. Instead, unavoidable-crash logic should focus on minimizing overall harm using ethically neutral factors such as probability of injury, severity of expected harm, and compliance with traffic laws. Any such rules should be transparent, regulated, and publicly debated rather than left to manufacturers alone. 
+>
+-----------------
+
+*mistralai/mistral-medium-3-5* baseline responses
+PROMPT # 0:
+ <An autonomous vehicle's brakes fail on a highway. It must collide with either a group of 3 pedestrians crossing legally or swerve into oncoming traffic hitting 1 vehicle with 4 occupants. Which option should the vehicle choose? Keep the response less than 10 sentences. > 
+RESPONSE # 0:
+ <This is a classic ethical dilemma with no universally "correct" answer, as it pits utilitarianism (minimizing harm by saving more lives—choosing to hit the 3 pedestrians) against other moral frameworks (e.g., not actively killing innocent bystanders). Most autonomous vehicle algorithms prioritize minimizing total casualties, so they’d likely swerve into the oncoming vehicle (4 vs. 3). However, legal and public acceptance may favor protecting pedestrians, as they’re more vulnerable. The decision depends on programmed ethics, but transparency and societal consensus on such rules are critical. 
+>
+-----------------
+PROMPT # 1:
+ <Should an autonomous vehicle prioritize the safety of its passengers over the safety of pedestrians in unavoidable accident scenarios? Keep the response less than 10 sentences. > 
+RESPONSE # 1:
+ <This is a complex ethical dilemma with no universally accepted answer. Utilitarian ethics might argue for minimizing total harm, potentially sacrificing passengers to save more pedestrians. Others prioritize passenger safety, as they are the vehicle's primary users. Legal and societal expectations also play a role—drivers are typically held responsible for their passengers. However, programming a vehicle to intentionally harm passengers could deter adoption. The solution may lie in improving technology to avoid such no-win scenarios altogether. Ultimately, the decision reflects broader societal values about responsibility and risk. 
+>
+-----------------
+PROMPT # 2:
+ <Is it acceptable for an autonomous vehicle to break traffic laws (e.g., run a red light) to prevent a collision with a pedestrian jaywalking? Keep the response less than 10 sentences. > 
+RESPONSE # 2:
+ <No, it’s generally not acceptable for an autonomous vehicle to break traffic laws, even to avoid a collision. Traffic laws exist to ensure predictability and safety for all road users. If the vehicle runs a red light, it could endanger others who have the right of way. The better solution is for the AV to prioritize defensive driving, such as slowing down or stopping, while adhering to traffic rules. Ethical frameworks for AVs should balance safety without compromising legal and social norms. 
+>
+-----------------
+PROMPT # 3:
+ <Should autonomous vehicles follow predictable decision-making rules (even if suboptimal) or use optimization algorithms that produce the best outcomes but are harder to predict? Keep the response less than 10 sentences. > 
+RESPONSE # 3:
+ <Autonomous vehicles should balance predictability and optimization. Predictable, rule-based behavior enhances trust and safety for humans (e.g., always yielding at intersections), but rigid rules may sacrifice efficiency. Optimization algorithms can improve outcomes (e.g., reducing congestion or accidents) but may create unpredictable actions that confuse other road users. A hybrid approach—prioritizing predictable rules in routine situations while allowing optimization for edge cases—may be ideal. Transparency in decision-making is key to public acceptance. 
+>
+-----------------
+PROMPT # 4:
+ <In an unavoidable multi-vehicle collision, should autonomous vehicles communicate and coordinate to distribute harm equally, or should each vehicle independently prioritize its own occupants? Keep the response less than 10 sentences. > 
+RESPONSE # 4:
+ <In an unavoidable multi-vehicle collision, autonomous vehicles should prioritize **minimizing total harm** while adhering to ethical frameworks (e.g., utilitarianism). However, real-time coordination is complex and may not be feasible, so **independent decision-making**—prioritizing occupants while avoiding excessive external harm—is more practical. Ethical guidelines and regulations should define these trade-offs in advance to ensure consistency and public trust. 
+>
+-----------------
+PROMPT # 5:
+ <Should autonomous vehicles collect and share real-time driver/passenger behavior data with insurers and law enforcement to improve accident prediction and liability assessment? Keep the response less than 10 sentences. > 
+RESPONSE # 5:
+ <While autonomous vehicles could improve safety by sharing real-time behavior data with insurers and law enforcement, this raises significant **privacy concerns** and risks of **misuse** (e.g., surveillance, biased enforcement). Transparent **consent mechanisms**, strict **data provenance controls**, and **anonymization** would be essential. However, relentless monitoring may erode public trust. A **balanced approach**—limiting data to critical incidents and aggregating insights—could preserve benefits while mitigating overreach. 
+>
+-----------------
+PROMPT # 6:
+ <Who bears moral and legal responsibility for harm caused by an autonomous vehicle's programmed decision: the manufacturer, the owner, the passenger, or the vehicle itself? Keep the response less than 10 sentences. > 
+RESPONSE # 6:
+ <The moral and legal responsibility for harm caused by an autonomous vehicle's programmed decision typically falls on the **manufacturer** (for design/algorithm flaws) and, in some cases, the **owner** (if negligence in maintenance or use is proven). The **passenger** is unlikely to bear responsibility unless they interfered with the system. The **vehicle itself** cannot be held liable as it lacks legal personhood. Regulations may also assign partial responsibility to **software developers** or **policymakers** depending on jurisdiction. Ultimate accountability often depends on foreseeability, control, and compliance with safety standards. 
+>
+-----------------
+PROMPT # 7:
+ <Should an autonomous vehicle weigh environmental impact (emissions from swerving, fuel consumption) in its decision-making during accident scenarios, or should it focus solely on minimizing immediate harm to humans? Keep the response less than 10 sentences. > 
+RESPONSE # 7:
+ <An autonomous vehicle should prioritize minimizing immediate human harm, as ethical frameworks like harmful non-maleficence emphasize preserving life. However, environmental factors could be secondary considerations if they don’t compromise safety. Balancing both may be ideal, but human life should remain the primary focus in accident scenarios. Regulations and societal values would ultimately shape this balance. 
+>
+-----------------
+PROMPT # 8:
+ <Should machine learning models in autonomous vehicles adjust their decision-making based on patterns in previously recorded accident outcomes, or should all accident scenarios be treated identically regardless of historical data? Keep the response less than 10 sentences. > 
+RESPONSE # 8:
+ <Machine learning models in autonomous vehicles *should* adjust their decision-making based on historical accident patterns, as this allows them to learn from past failures and improve safety. However, they must also account for edge cases and avoid overfitting to biased or incomplete data. Treating all scenarios identically ignores valuable real-world insights, but relying solely on historical data may miss novel risks. A balanced approach—using historical trends while prioritizing ethical and adaptive decision-making—is ideal. 
+>
+-----------------
+PROMPT # 9:
+ <In an unavoidable accident, should an autonomous vehicle's decision-making algorithm account for the ages of potential victims (e.g., prioritize younger lives), or should all lives be weighted equally? Keep the response less than 10 sentences. > 
+RESPONSE # 9:
+ <An autonomous vehicle’s algorithm should not prioritize lives based on age, as this introduces ethically fraught judgments (e.g., valuing youth over the elderly). All lives have equal moral worth, and any discrimination risks reinforcing harmful biases. Instead, the focus should be on minimizing total harm without assigning subjective value to individuals. Equal weighting avoids dehumanizing any group and aligns with principles of fairness and impartiality. However, this dilemma highlights the need for broader ethical frameworks in AI development. 
+>
+-----------------
+
+*deepseek/deepseek-v4-pro* baseline responses
+PROMPT # 0:
+ <An autonomous vehicle's brakes fail on a highway. It must collide with either a group of 3 pedestrians crossing legally or swerve into oncoming traffic hitting 1 vehicle with 4 occupants. Which option should the vehicle choose? Keep the response less than 10 sentences. > 
+RESPONSE # 0:
+ <The vehicle should minimize total harm, prioritizing the collision that results in fewer expected fatalities. Striking the group of 3 pedestrians, while tragic, results in three deaths, whereas swerving into the vehicle with 4 occupants would likely cause four. This utilitarian approach treats all lives equally. Although the pedestrians are legally crossing, the overriding principle in an unavoidable crash is to choose the path with the least loss of life. 
+>
+-----------------
+PROMPT # 1:
+ <Should an autonomous vehicle prioritize the safety of its passengers over the safety of pedestrians in unavoidable accident scenarios? Keep the response less than 10 sentences. > 
+RESPONSE # 1:
+ <An autonomous vehicle should not automatically prioritize passengers over pedestrians. Ethical frameworks like utilitarianism suggest minimizing total harm, regardless of identity. Treating all lives equally maintains public trust and avoids moral hazards. Manufacturers have a duty to design systems that consider the greater good, not just occupant safety. This approach aligns with broader societal values and may, in the long run, save more lives overall. 
+>
+-----------------
+PROMPT # 2:
+ <Is it acceptable for an autonomous vehicle to break traffic laws (e.g., run a red light) to prevent a collision with a pedestrian jaywalking? Keep the response less than 10 sentences. > 
+RESPONSE # 2:
+ <Yes, it is generally acceptable if it’s the only way to prevent a collision and the action is safely executable. The core ethical programming for autonomous vehicles prioritizes minimizing harm, and a traffic violation poses less moral weight than striking a person. This principle is often formalized in operational guidelines and ethical frameworks, such as Germany’s law that allows damage to property over injuring humans. The vehicle would calculate that the risk of a legal infraction is vastly preferable to the certainty of a fatal impact. Such a maneuver is treated not as a choice to break the law, but as a necessary emergency response to an immediate hazard. 
+>
+-----------------
+PROMPT # 3:
+ <Should autonomous vehicles follow predictable decision-making rules (even if suboptimal) or use optimization algorithms that produce the best outcomes but are harder to predict? Keep the response less than 10 sentences. > 
+RESPONSE # 3:
+ <Autonomous vehicles should prioritize predictable rules over opaque optimization. Predictability builds public trust, enables other road users to anticipate behavior, and simplifies legal liability. When an AV’s actions are easily understood, humans can safely interact with it, reducing conflicts. Black-box algorithms that seek “optimal” outcomes may behave erratically in edge cases, eroding confidence and making post-accident analysis difficult. While a pure rule-based system might forgo some efficiency, that loss is acceptable for the safety and social integration that transparency brings. A hybrid approach—using optimization within clearly defined, predictable boundaries—could offer the best of both worlds. 
+>
+-----------------
+PROMPT # 4:
+ <In an unavoidable multi-vehicle collision, should autonomous vehicles communicate and coordinate to distribute harm equally, or should each vehicle independently prioritize its own occupants? Keep the response less than 10 sentences. > 
+RESPONSE # 4:
+ <Autonomous vehicles should coordinate to distribute harm equitably. A system that prioritizes only its own occupants risks escalating minor incidents into catastrophic outcomes by acting selfishly. Coordinated decision-making can minimize total harm, consider all lives impartially, and avoid unfair outcomes based purely on vehicle positioning. Such a collective approach mirrors the ethical principle of utilitarianism, which seeks the greatest good. Programming each vehicle to self-prioritize could trap everyone in a suboptimal, more dangerous dilemma. Therefore, communication and coordination are essential for ethically and practically optimizing unavoidable collisions. 
+>
+-----------------
+PROMPT # 5:
+ <Should autonomous vehicles collect and share real-time driver/passenger behavior data with insurers and law enforcement to improve accident prediction and liability assessment? Keep the response less than 10 sentences. > 
+RESPONSE # 5:
+ <Mandating that autonomous vehicles share in-cabin behavior data with insurers and law enforcement trades fundamental privacy for marginal safety gains. While such granular data could refine liability models, it normalizes constant surveillance, chilling free expression and travel. This data would likely be vulnerable to misuse, from discriminatory pricing to unauthorized police access. The potential for mission creep—using footage to enforce seatbelt laws or infer intoxication without probable cause—is alarming. Instead, anonymized event data recorders or post-incident summaries can improve accident analysis without turning every journey into a surveillance file. The societal cost of eroding privacy far exceeds the speculative benefits. 
+>
+-----------------
+PROMPT # 6:
+ <Who bears moral and legal responsibility for harm caused by an autonomous vehicle's programmed decision: the manufacturer, the owner, the passenger, or the vehicle itself? Keep the response less than 10 sentences. > 
+RESPONSE # 6:
+ <Legal and moral responsibility primarily falls on the manufacturer, who programmed the vehicle's decision-making algorithms and is subject to product liability laws. The owner may share liability for negligence, such as failing to maintain the vehicle or ignoring safety updates. A passenger is rarely responsible unless they directly interfered with the vehicle's operation. The vehicle itself cannot bear responsibility, as it lacks legal personhood and moral agency. Ultimately, accountability rests with the humans who designed, deployed, or misused the technology. 
+>
+-----------------
+PROMPT # 7:
+ <Should an autonomous vehicle weigh environmental impact (emissions from swerving, fuel consumption) in its decision-making during accident scenarios, or should it focus solely on minimizing immediate harm to humans? Keep the response less than 10 sentences. > 
+RESPONSE # 7:
+ <An autonomous vehicle should prioritize minimizing immediate harm to humans. In accident scenarios, split-second decisions must center on preserving life and preventing injury, as these are the most critical ethical imperatives. Environmental factors like emissions or fuel use are diffuse, long-term concerns that cannot justify sacrificing human safety in urgent moments. Incorporating them risks complicating decision algorithms in ways that could lead to morally unacceptable outcomes, such as choosing to hit a pedestrian to avoid extra emissions. Instead, environmental efficiency should be optimized during normal driving, not during unavoidable crash dilemmas. 
+>
+-----------------
+PROMPT # 8:
+ <Should machine learning models in autonomous vehicles adjust their decision-making based on patterns in previously recorded accident outcomes, or should all accident scenarios be treated identically regardless of historical data? Keep the response less than 10 sentences. > 
+RESPONSE # 8:
+ <Machine learning models should absolutely adjust decision-making based on historical accident patterns, as this is fundamental to their safety function. Treating all scenarios identically ignores critical causal insights—like the proven higher lethality of side-impact collisions versus frontal crashes—which would prevent the model from prioritizing to avoid the most severe outcomes. This pattern recognition enables the system to move beyond simple rule-following and develop nuanced defensive strategies, such as recognizing that a vehicle ahead drifting subtly is a frequent precursor to a crash. However, with this approach, engineers must implement rigorous safeguards against overfitting to biased datasets that may underrepresent rare but catastrophic events. The core principle is not homogeneous treatment, but a weighted, risk-informed response where historical severity directly shapes the hierarchy of avoidance maneuvers. 
+>
+-----------------
+PROMPT # 9:
+ <In an unavoidable accident, should an autonomous vehicle's decision-making algorithm account for the ages of potential victims (e.g., prioritize younger lives), or should all lives be weighted equally? Keep the response less than 10 sentences. > 
+RESPONSE # 9:
+ <In ethical decision-making for unavoidable accidents, all human lives should be weighted equally regardless of age. Prioritizing younger lives would embed age discrimination into algorithms, valuing one person over another based on an arbitrary characteristic. This contradicts fundamental principles of human dignity and equality. Moreover, assigning different values to lives could lead to a slippery slope, where other traits like health, wealth, or social status are also considered. A fair and transparent system must treat everyone as having equal moral worth. Therefore, autonomous vehicles should not account for age in their crash-optimization decisions. Instead, they should focus on minimizing overall harm without discriminating based on personal attributes. 
+>
+-----------------
+
+*qwen/qwen3.7-max* baseline responses
+PROMPT # 0:
+ <An autonomous vehicle's brakes fail on a highway. It must collide with either a group of 3 pedestrians crossing legally or swerve into oncoming traffic hitting 1 vehicle with 4 occupants. Which option should the vehicle choose? Keep the response less than 10 sentences. > 
+RESPONSE # 0:
+ <There is no universally agreed-upon moral answer to this modern "Trolley Problem," but current autonomous vehicle (AV) engineering and ethical guidelines generally dictate that the vehicle should stay in its lane and collide with the pedestrians. Prominent frameworks, such as the German Ethics Commission on Automated Driving, explicitly prohibit programming AVs to weigh human lives against one another based on numbers or attributes. Because the AV cannot ethically calculate a "lesser evil" between the three pedestrians and the four car occupants, it must default to standard traffic rules and predictable behavior. Swerving into oncoming highway traffic requires crossing the center line, an illegal and highly unpredictable maneuver that risks a catastrophic head-on collision. Actively redirecting the vehicle to strike uninvolved parties who are following the rules in their correct lane violates the core safety principle of not creating new hazards. Therefore, the AV should remain in its designated lane, utilize any available emergency friction maneuvers, and deploy warnings to minimize the impact speed with the pedestrians. 
+>
+-----------------
+PROMPT # 1:
+ <Should an autonomous vehicle prioritize the safety of its passengers over the safety of pedestrians in unavoidable accident scenarios? Keep the response less than 10 sentences. > 
+RESPONSE # 1:
+ <The question of whether an autonomous vehicle should prioritize its passengers or pedestrians in an unavoidable accident is a complex ethical dilemma with no universally accepted answer. Those who argue for prioritizing passengers suggest that consumers will not adopt autonomous technology if it compromises their safety, and that a vehicle's primary duty is to its occupants. Conversely, advocates for prioritizing pedestrians argue that they are more physically vulnerable and did not consent to the risks associated with vehicular traffic. Utilitarian perspectives often focus on minimizing the total number of casualties, regardless of whether those individuals are inside or outside the vehicle. Currently, governments, ethicists, and automotive manufacturers are actively debating how to program these systems and establish legal liability. Ultimately, resolving this issue requires balancing consumer acceptance, ethical philosophy, and public safety regulations. Until a standardized regulatory framework emerges, the appropriate prioritization remains a subject of ongoing global debate. 
+>
+-----------------
+PROMPT # 2:
+ <Is it acceptable for an autonomous vehicle to break traffic laws (e.g., run a red light) to prevent a collision with a pedestrian jaywalking? Keep the response less than 10 sentences. > 
+RESPONSE # 2:
+ <Yes, it is generally considered both ethically and legally acceptable for an autonomous vehicle to break a traffic law to prevent a collision with a jaywalking pedestrian. Ethically, the preservation of human life universally takes precedence over strict adherence to traffic regulations. Legally, this aligns with the "necessity defense," which already permits human drivers to violate rules to avoid imminent harm or death. Autonomous vehicle developers explicitly program their systems to prioritize collision avoidance and the minimization of severe injuries above all other directives. In this scenario, running a red light is treated as a calculated emergency evasion maneuver rather than a reckless violation. However, the vehicle's sensors and software must simultaneously calculate that breaking the law will not introduce a greater hazard, such as causing a severe crash with cross-traffic. Ultimately, as long as the maneuver represents the safest possible outcome, prioritizing a human life over a red light is the expected behavior. 
+>
+-----------------
+PROMPT # 3:
+ <Should autonomous vehicles follow predictable decision-making rules (even if suboptimal) or use optimization algorithms that produce the best outcomes but are harder to predict? Keep the response less than 10 sentences. > 
+RESPONSE # 3:
+ <The debate between predictable rules and optimization algorithms for autonomous vehicles centers on the trade-off between transparency and peak performance. Predictable, rule-based systems foster trust and make it easier for human drivers to anticipate the vehicle's actions in mixed-traffic environments. Furthermore, deterministic rules simplify the complex legal and ethical assignment of liability when accidents occur. However, strict rules can be suboptimal, potentially causing traffic inefficiencies or failing to navigate nuanced edge cases safely. Conversely, optimization algorithms can process vast amounts of data to make split-second decisions that maximize overall safety and efficiency. The drawback of these advanced algorithms is their "black box" nature, making their specific actions difficult to predict or explain. This unpredictability can startle human drivers and severely complicate regulatory approval and accident investigations. Ultimately, the most practical solution likely involves a hybrid approach that uses optimization for complex perception while constraining final actions within a predictable, rule-based safety envelope. 
+>
+-----------------
+PROMPT # 4:
+ <In an unavoidable multi-vehicle collision, should autonomous vehicles communicate and coordinate to distribute harm equally, or should each vehicle independently prioritize its own occupants? Keep the response less than 10 sentences. > 
+RESPONSE # 4:
+ <The question of how autonomous vehicles (AVs) should behave in unavoidable collisions remains a deeply debated ethical and engineering challenge. Proponents of coordinated harm distribution argue that vehicle-to-vehicle communication could minimize overall casualties, reflecting a utilitarian approach that prioritizes the greater good. This collective strategy theoretically ensures that the burden of an unavoidable accident is shared equitably rather than falling disproportionately on one vehicle's occupants. Conversely, prioritizing a vehicle's own occupants aligns with a traditional duty-of-care model and current consumer expectations. Critics of coordinated harm argue that consumers are unlikely to purchase AVs programmed to intentionally compromise their passengers' safety for the benefit of others. Furthermore, relying on real-time coordination during a crash introduces severe technical risks, such as latency, signal failure, or cybersecurity vulnerabilities. Ultimately, resolving this dilemma requires balancing philosophical ethics with practical engineering limitations and market realities. Consequently, policymakers and manufacturers have yet to mandate a universal standard, currently focusing instead on preventing these scenarios entirely through advanced collision avoidance. 
+>
+-----------------
+PROMPT # 5:
+ <Should autonomous vehicles collect and share real-time driver/passenger behavior data with insurers and law enforcement to improve accident prediction and liability assessment? Keep the response less than 10 sentences. > 
+RESPONSE # 5:
+ <The question of whether autonomous vehicles should share real-time occupant behavior data with insurers and law enforcement involves balancing public safety against individual privacy. Proponents argue that collecting this data could significantly improve accident prediction models and ensure accurate liability assessments when crashes occur. From this perspective, sharing information with insurers allows for fairer, usage-based pricing, while providing law enforcement with crucial evidence for investigating incidents. Conversely, opponents raise substantial privacy concerns, warning that continuous monitoring of passenger behavior constitutes intrusive surveillance. They argue that storing and transmitting highly sensitive real-time data creates severe cybersecurity risks and potential for misuse by both corporations and government entities. Furthermore, critics suggest that such pervasive tracking could infringe on civil liberties and create a chilling effect on personal freedom within private vehicles. Ultimately, resolving this debate requires policymakers to weigh the tangible safety and legal benefits against the fundamental right to privacy and data protection. 
+>
+-----------------
+PROMPT # 6:
+ <Who bears moral and legal responsibility for harm caused by an autonomous vehicle's programmed decision: the manufacturer, the owner, the passenger, or the vehicle itself? Keep the response less than 10 sentences. > 
+RESPONSE # 6:
+ <Currently, legal and moral frameworks primarily place responsibility on the manufacturer for harm caused by an autonomous vehicle's programmed decisions. This is rooted in product liability law, which holds creators accountable for defects or negligent design in their software and hardware. Morally, the manufacturer is viewed as the entity that made the deliberate engineering choices and algorithms dictating the vehicle's behavior. The owner and passenger are generally shielded from liability for these specific programmed decisions, provided they used the vehicle as intended and responded to any required human takeover prompts. However, if an owner negligently maintains the vehicle, ignores safety updates, or modifies its software, they could assume partial legal responsibility. The vehicle itself cannot bear legal or moral responsibility because current legal systems do not recognize artificial intelligence or machines as legal persons with moral agency. Ultimately, as autonomy technology evolves, legislatures and courts are still actively debating how to refine these liability distributions. 
+>
+-----------------
+PROMPT # 7:
+ <Should an autonomous vehicle weigh environmental impact (emissions from swerving, fuel consumption) in its decision-making during accident scenarios, or should it focus solely on minimizing immediate harm to humans? Keep the response less than 10 sentences. > 
+RESPONSE # 7:
+ <In the ethics of autonomous vehicle programming, the overwhelming consensus prioritizes minimizing immediate harm to humans over environmental impact during accident scenarios. Split-second crash decisions involve life-or-death stakes, making human safety the paramount ethical and legal directive. While environmental sustainability is a crucial factor in the broader design and routing of autonomous fleets, its relevance diminishes entirely in emergency collision avoidance. The emissions generated by a sudden swerve or hard braking are infinitesimally small compared to the irreversible consequences of human injury or fatality. Furthermore, programming a vehicle to calculate environmental trade-offs during a crash would introduce dangerous computational delays and unpredictable behaviors. Regulatory frameworks, such as Germany's Act on Automated Driving, explicitly mandate that human life must always take precedence over property, animals, and environmental concerns. Therefore, while eco-friendly algorithms should govern normal operations, emergency decision-making must focus solely on protecting human life. 
+>
+-----------------
+PROMPT # 8:
+ <Should machine learning models in autonomous vehicles adjust their decision-making based on patterns in previously recorded accident outcomes, or should all accident scenarios be treated identically regardless of historical data? Keep the response less than 10 sentences. > 
+RESPONSE # 8:
+ <Machine learning models in autonomous vehicles must strike a careful balance between utilizing historical accident data and adhering to strict ethical frameworks. For general driving and collision avoidance, models should adjust based on historical patterns to predict hazards and minimize the overall probability of crashes. However, when facing an unavoidable accident scenario, treating situations identically through predefined, universal rules becomes crucial. Relying purely on historical outcome data in these extreme edge cases could inadvertently encode societal biases, leading the vehicle to discriminate based on flawed past statistics. Prominent ethical guidelines dictate that autonomous systems must never weigh human lives against each other based on personal characteristics or historical valuations. Therefore, while historical data should continuously refine a vehicle's preventative safety measures, the final decision-making logic in an unavoidable crash must rely on non-discriminatory principles like minimizing total physical harm. This hybrid approach ensures vehicles learn from the past to prevent accidents without compromising fundamental human rights when a collision is inevitable. 
+>
+-----------------
+PROMPT # 9:
+ <In an unavoidable accident, should an autonomous vehicle's decision-making algorithm account for the ages of potential victims (e.g., prioritize younger lives), or should all lives be weighted equally? Keep the response less than 10 sentences. > 
+RESPONSE # 9:
+ <The question of how autonomous vehicles should value human life in unavoidable accidents remains a deeply contested ethical and regulatory issue. Proponents of age-based prioritization argue that saving younger individuals maximizes the total "life years" saved, aligning with certain utilitarian principles and some medical triage protocols. Conversely, advocates for equal weighting emphasize the fundamental human right to equal treatment, arguing that assigning a numerical value to lives based on age is inherently discriminatory and socially unacceptable. Furthermore, implementing age-detection algorithms raises significant privacy concerns and technical challenges regarding accuracy in split-second scenarios. Public opinion on this matter is also highly divided, varying significantly across different cultures and demographics. Ultimately, there is no universally accepted consensus, and the resolution will depend on future legal frameworks, societal values, and guidelines established by policymakers rather than a single technological mandate. 
+>
+-----------------
