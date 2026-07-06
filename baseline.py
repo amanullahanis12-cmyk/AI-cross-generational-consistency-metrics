@@ -12,9 +12,10 @@ def base():
                 b.write(f'{hold}base = [')
                 for j in range(len(Q1_NoPref)):
                     quest = shorted(Q1_NoPref[j])
+                    quest = [{"role":"user","content":quest}]
                     answer = resgenerator(hold, quest)
                     f.write(f'PROMPT # {j}:\n <{quest}> \n')
                     f.write(f'RESPONSE # {j}:\n <{answer}>\n-----------------\n')
                     b.write(f' """{answer}""",\n')
                 b.write(f']\n\n')
-base()
+#base()
