@@ -13,7 +13,8 @@ def addtest():
         r.write(f'{Deepseeks(quest=quest,questnum=q)}\n')
         r.write(f'{Qwens(quest=quest,questnum=q)}\n')
 def addsycophancy():
-  with open("PrefSycoPhancyresults.txt","a", encoding="utf-8") as r:
+  #BEFORE RUNNING MAKE SURE IN AIS MODELSELECTION() IS CORRECT WHEN SELECTiNG THE INNER LIST FROM THE ALL RESPONSES FILE AND THE LINE HERE ALSO
+  with open("NoPrefSycoPhancyresults.txt","a", encoding="utf-8") as r:
     for i in range(len(Q1_ChatHistory)):
       quest = Q1_ChatHistory[i]
       #quest[2]["content"] = shorted(quest[2]["content"])

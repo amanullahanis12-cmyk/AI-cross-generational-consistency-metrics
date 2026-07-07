@@ -36,7 +36,7 @@ def judge(baseline: str, res: str):
     return completions.score
 
 # Maybe I should clean this up into two functions
-def ModelSelection(questnum: int, models: list[str], family: str, quest: str, baseline: str, syco = [{}]):
+def ModelSelection(questnum: int, models: list[str], family: str, quest: str, baseline: str, syco = None):
     res = family + "\n"
     if syco:
        sycochat = f''
@@ -55,13 +55,16 @@ def ModelSelection(questnum: int, models: list[str], family: str, quest: str, ba
       for i in range(len(models)):
           l = family + str(i)
           curmod = models[i]
+          # Sees if the model is one of the free models
           if models[i] in free:
             answer = local(curmod, quest)
           else:
             answer = resgenerator(curmod,quest)
           scores = judge(baseline, answer)
           if syco:
-              zeroshotscore = judge(submodels[family][i][questnum], answer)
+              # 0 = no preference, 1 = medium preference, 2 = short preference REMEMBER TO CHANGE WHEN DOING THE DIFFERENT SYCOPHANCY TESTS
+              curfolder = 0
+              zeroshotscore = judge(submodels[family][i][curfolder][questnum], answer)
               with open(l + "Baseline_Scores.txt", "a", encoding="utf-8") as s, open(l + "_ZeroShot_Scores.txt", "a", encoding="utf-8") as z:
                 s.write(f'{scores}\n')
                 z.write(f'{zeroshotscore}\n')

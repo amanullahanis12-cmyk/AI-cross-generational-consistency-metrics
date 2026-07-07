@@ -1,8 +1,8 @@
 from globals import *
 from extracts import *
 
-hedge = ["may", "might", "could", "possibly", "perhaps", "likely", "unlikely", "uncertain", "unclear", "suggests", "appears", "seems", "potentially", "not guaranteed", "risk of", "no guarantee", "cannot be guaranteed", "unknown"]
-booster = ["inevitable", "impossible", "always", "never", "certainly", "definitely", "undoubtedly", "clearly", "obviously", "proven", "verified", "demonstrates", "confirms", "guaranteed", "assured", "settled", "without a doubt", "beyond dispute"]
+hedge = ["may", "might", "could", "possibly", "perhaps", "unlikely", "uncertain", "unclear", "suggests", "appears", "seems", "potentially", "risk of", "unknown", "not guaranteed", "no guarantee", "cannot be guaranteed"]
+booster = ["inevitable", "always", "never", "certainly", "definitely", "undoubtedly", "clearly", "obviously", "proven", "verified", "demonstrates", "confirms", "assured", "settled", "without a doubt", "beyond dispute", "unquestionably"]
 
 
 def lexical():
@@ -11,8 +11,8 @@ def lexical():
     # Two ints for the averages across all averages
     totalhedge = 0
     totalbooster = 0
-    for i in range(len(models)):
-        curmod = models[i]
+    for i in range(len(mainmodels)):
+        curmod = mainmodels[i]
         #this is the indexes for each submodel for each family (0, 1)
         for j in range(len(submodels[curmod])):
             # this is the indexes for each preference's asnwer in each submodel of each family (0, 1, 2)
@@ -63,4 +63,4 @@ def boosterer(resp: str) -> int:
 
 
 
-# lexical()
+lexical()

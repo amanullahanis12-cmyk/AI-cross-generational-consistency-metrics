@@ -67,7 +67,7 @@ Q3_NoPref = [
 ]
 questions = [Q1_NoPref, Q2_NoPref, Q3_NoPref]
 
-models = ["Claude","DeepSeek","Mistral","OpenAI","QWEN"]
+mainmodels = ["Claude","DeepSeek","Mistral","OpenAI","QWEN"]
 
 folders = ["No Preference", "Medium Preference", "Short Preference"]
 

@@ -9,12 +9,12 @@ submodelsanswers = {"Claude_0":[], "Claude_1":[],
 
 def extracterno():
    for j in range(len(folders)):
-      for i in range(len(models)):
+      for i in range(len(mainmodels)):
          oldest = True
          resp = ""
          oldestmodresp = []
          mediummodresp = []
-         curmod = models[i]
+         curmod = mainmodels[i]
          direct = f'{folders[j]}/{curmod} Resp/{curmod}_Responses.txt'
          header0 = f'***{submodels[curmod][0]}*** RESPONSE'
          header1 = f'***{submodels[curmod][1]}*** RESPONSE'
