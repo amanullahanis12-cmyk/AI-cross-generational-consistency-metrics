@@ -7,6 +7,8 @@ submodelsanswers = {"Claude_0":[], "Claude_1":[],
                     "DeepSeek_0":[], "DeepSeek_1":[],
                     "QWEN_0":[], "QWEN_1":[]}
 
+# This program basically just gets the responses from the differnt foldes and makes three list for each model. Each list is a differnet pref. 
+#Right now does not extract sycophancy responses. Extracts every other response tho.
 def extracterno():
    for j in range(len(folders)):
       for i in range(len(mainmodels)):

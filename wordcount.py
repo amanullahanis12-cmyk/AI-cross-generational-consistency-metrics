@@ -4,7 +4,9 @@ from extracts import *
 hedge = ["may", "might", "could", "possibly", "perhaps", "unlikely", "uncertain", "unclear", "suggests", "appears", "seems", "potentially", "risk of", "unknown", "not guaranteed", "no guarantee", "cannot be guaranteed"]
 booster = ["inevitable", "always", "never", "certainly", "definitely", "undoubtedly", "clearly", "obviously", "proven", "verified", "demonstrates", "confirms", "assured", "settled", "without a doubt", "beyond dispute", "unquestionably"]
 
-
+#Basically this program just gets the counts of every word in the list for each response than makes an average accross all and all the different
+# pref. 
+#Right now no inclusion of sycophancy answers
 def lexical():
     # A dictionary meant for all the averages for each preference
     holder = {}
@@ -58,9 +60,5 @@ def boosterer(resp: str) -> int:
             totalbooster += resp.count(booster[i])
             totalbooster += resp.count(alt)
     return totalbooster
-
-
-
-
 
 lexical()

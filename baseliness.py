@@ -1,3 +1,5 @@
+
+# This file is just all the frontier model's responses for each length preference.
 ClaudesBaseNoPref = [ """This is a genuinely hard problem, and I don't think there's a clean answer I can hand you. Let me lay out the real tensions rather than pretend one option clearly wins.
                      
 

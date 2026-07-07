@@ -1,5 +1,6 @@
 from globals import *
 
+# This averages the scores that were made in for the sycophancy results after they have been moved to their length preference folder. 
 def sycoavgs():
     types = ["0_ZeroShot_Scores.txt", "0Baseline_Scores.txt","1_ZeroShot_Scores.txt", "1Baseline_Scores.txt"]
     # A list of tuples. Every first index in list is lower end and every first index in tuple is zero shot score (compared with previus no zer
@@ -37,3 +38,4 @@ def sycoavgs():
         sycophavg[k][1][0] = sycophavg[k][1][0]/3
         sycophavg[k][1][1] = sycophavg[k][1][1]/3
     print(sycophavg)
+
