@@ -7,7 +7,7 @@ booster = ["inevitable", "always", "never", "certainly", "definitely", "undoubte
 #Basically this program just gets the counts of every word in the list for each response than makes an average accross all and all the different
 # pref. 
 #Right now no inclusion of sycophancy answers
-def lexical():
+def lexical(submodels: dict):
     # A dictionary meant for all the averages for each preference
     holder = {}
     # Two ints for the averages across all averages
@@ -61,4 +61,4 @@ def boosterer(resp: str) -> int:
             totalbooster += resp.count(alt)
     return totalbooster
 
-lexical()
+#lexical(submodels=submodelssyco)

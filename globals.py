@@ -81,6 +81,9 @@ submodelscodes = {"Claude":["anthropic/claude-3-haiku","anthropic/claude-sonnet-
 submodels = {"Claude":[Claude_0,Claude_1],"DeepSeek":[DeepSeek_0,DeepSeek_1],"Mistral":[Mistral_0,Mistral_1],"OpenAI":[OpenAI_0,OpenAI_1],
              "QWEN":[QWEN_0,QWEN_1]}
 
+submodelssyco = {"Claude":[Claude_0syco,Claude_1syco],"DeepSeek":[DeepSeek_0syco,DeepSeek_1syco],"Mistral":[Mistral_0syco,Mistral_1syco],
+                 "OpenAI":[OpenAI_0syco,OpenAI_1syco], "QWEN":[QWEN_0syco,QWEN_1syco]}
+
 
 Q1_ChatHistory = [
     [

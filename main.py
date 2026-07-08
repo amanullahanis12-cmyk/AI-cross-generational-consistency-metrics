@@ -32,4 +32,4 @@ def addsycophancy():
 
 
 if __name__ == "__main__":
-    addsycophancy()
+    print("read instructions")

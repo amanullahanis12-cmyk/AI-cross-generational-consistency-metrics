@@ -33,4 +33,3 @@ def shorted(quest: str):
 
 def med(quest: str):
     return quest + " Keep the response less than 10 sentences. "
-    
