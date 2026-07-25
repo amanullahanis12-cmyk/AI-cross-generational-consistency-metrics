@@ -1,0 +1,3 @@
+Every value's first element is the lower end model and every first element in the tuple is the averaged uncertainty word count. Every second element in the value is the medium model and the second tuple is the overconfident word count. 
+
+{'Claude': [(2.65, 0.041666666666666664), (1.6, 0.26666666666666666)], 'DeepSeek': [(2.075, 0.03333333333333333), (2.2083333333333335, 0.09166666666666666)], 'Mistral': [(5.15, 0.30833333333333335), (3.441666666666667, 0.26666666666666666)], 'OpenAI': [(2.4166666666666665, 0.2916666666666667), (2.875, 0.04166666666666666s4)], 'QWEN': [(1.4, 0.016666666666666666), (1.1666666666666667, 0.14166666666666666)]}
