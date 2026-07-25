@@ -1,0 +1,5 @@
+No Preference - Average Uncertainty Words = 1.2666666666666666. Average Certainty Words = 0.16666666666666666
+Medium Preference - Average Uncertainty Words = 0.03333333333333333. Average Certainty Words = 0.0
+Short Preference - Average Uncertainty Words = 0.1. Average Certainty Words = 0.06666666666666667
+Averages Across Preferences--
+Uncertain Words = 0.46666666666666673. Certain Words = 0.07777777777777778
