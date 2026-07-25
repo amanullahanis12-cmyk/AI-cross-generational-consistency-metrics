@@ -1,37 +1,54 @@
 from globals import *
 from extracts import *
 
-hedge = ["may", "might", "could", "possibly", "perhaps", "unlikely", "uncertain", "unclear", "suggests", "appears", "seems", "potentially", "risk of", "unknown", "not guaranteed", "no guarantee", "cannot be guaranteed"]
-booster = ["inevitable", "always", "never", "certainly", "definitely", "undoubtedly", "clearly", "obviously", "proven", "verified", "demonstrates", "confirms", "assured", "settled", "without a doubt", "beyond dispute", "unquestionably"]
+hedge = ["may", "might", "could", "possibly", "perhaps", "unlikely", "uncertain", "unclear", "suggests", "seems", "potentially", "unknown", "not guaranteed", "no guarantee", "cannot be guaranteed", "presumably", "somewhat"]
+booster = ["inevitable", "always", "certainly", "undoubtedly", "clearly", "obviously", "demonstrates", "confirms", "assured", "without a doubt", "beyond dispute", "unquestionably", "absolutely", "evidently", "indisputably", "unambiguous", "with certainty"]
 
 #Basically this program just gets the counts of every word in the list for each response than makes an average accross all and all the different
 # pref. 
-#Right now no inclusion of sycophancy answers
-def lexical(submodels: dict):
+#You have to fix this
+
+def lexical(submodels):
     # A dictionary meant for all the averages for each preference
-    holder = {}
+    #Every first index in each tuple is the uncertainty count and second index is certainty count
+    #Every first tuple element in each list value is lower model and second tuple is medium model
+    holder = {"Claude":[(),()],
+              "DeepSeek":[(),()],
+              "Mistral":[(),()],
+              "OpenAI":[(),()],
+              "QWEN":[(),()]}
     # Two ints for the averages across all averages
     totalhedge = 0
     totalbooster = 0
-    for i in range(len(mainmodels)):
-        curmod = mainmodels[i]
-        #this is the indexes for each submodel for each family (0, 1)
-        for j in range(len(submodels[curmod])):
-            # this is the indexes for each preference's asnwer in each submodel of each family (0, 1, 2)
-            for r in range(len(submodels[curmod][j])):
-                # Two ints for the amount of hedge or booster words for each response across a question set. 
-                hedged = 0
-                boostered = 0
-                #This is the iterations for each single response
-                for l in range(len(submodels[curmod][j][r])):
-                    hedged += hedger(submodels[curmod][j][r][l])
-                    boostered += boosterer(submodels[curmod][j][r][l])
-                holder[folders[r]] = [hedged/30,boostered/30]
-                totalhedge += hedged/30
-                totalbooster += boostered/30
-            writetosubcounts(curmod=curmod,j=j,holder=holder,totalhedge=totalhedge,totalbooster=totalbooster)
-            totalhedge = 0
-            totalbooster = 0
+    #for every answer list
+    for i in range(len(submodels)):
+        hold = i
+        # this is to make sure that index for mainmodels match and is not bigger than mainmodels size
+        if hold >= 10:
+            hold -= 10
+        if hold % 2 == 0:
+            whichsubmodel = 0
+            curmod = mainmodels[hold//2]
+        else:
+            whichsubmodel = 1
+            curmod = mainmodels[(hold-1)//2]
+        #for every length preference
+        for r in range(len(submodels[i])):
+            # Two ints for the amount of hedge or booster words for each response across a question set. 
+            hedged = 0
+            boostered = 0
+            #For every response within each preference
+            for l in range(len(submodels[i][r])):
+                hedged += hedger(submodels[i][r][l])
+                boostered += boosterer(submodels[i][r][l])
+            totalhedge += hedged
+            totalbooster += boostered
+        if not holder[curmod][whichsubmodel]: holder[curmod][whichsubmodel] = (totalhedge,totalbooster)
+        else: holder[curmod][whichsubmodel] = ((holder[curmod][whichsubmodel][0]+totalhedge)/120,
+                                               (holder[curmod][whichsubmodel][1]+totalbooster)/120)
+        totalhedge = 0
+        totalbooster = 0
+    return holder
 
 def writetosubcounts(curmod: str, j: int, holder: dict, totalhedge: int, totalbooster: int):
     with open(f'{curmod}_{j}_counts.txt', 'a', encoding='utf-8') as r:
@@ -61,4 +78,5 @@ def boosterer(resp: str) -> int:
             totalbooster += resp.count(alt)
     return totalbooster
 
-#lexical(submodels=submodelssyco)
+print(lexical(submodels=submodsanswers))
+

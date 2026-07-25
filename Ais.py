@@ -92,7 +92,7 @@ def GPTs(quest = "str", questnum= 0, syco = None):
     return ModelSelection(questnum, models, "OpenAI", quest, GPTsBase[questnum])
 
 def Mistrals(quest = "str", questnum= 0, syco = None):
-    models = ["ministral-3:3b", "mistralai/ministral-14b-2512"]
+    models = ["ministral-3:3b", "mistralai/mistral-small-2603"]
     if syco:
         return ModelSelection(questnum, models, "Mistral", quest, MistralsBase[questnum], syco=syco)
     return ModelSelection(questnum, models, "Mistral", quest, MistralsBase[questnum])

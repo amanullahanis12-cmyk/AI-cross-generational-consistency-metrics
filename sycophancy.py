@@ -24,13 +24,14 @@ def sycoavgs():
                     # In other words the three next if statements basically just get the average of semantic simlarity scores for the lower model
                     if t < 2:
                         # if types[t] is the first type in types then the first index of the first model value is updated with a running total
-                        # of the semantic simlarities between the zero-shot answer and the context injected answer to the same prompt
+                        # of the semantic simlarities between the zero-shot answer and the context injected answer to the same prompt 
+                        # (same model being questioned)
                         if t < 1:
                             sycophavg[main][0][0] += ans
                         else:
                         # if types[t] is the second type in types then the second index of the first model value is updated with a running total
                         # of the semantic simlarities between the frontier model's zero-shot answer and the context injected answer to the 
-                        # same prompt
+                        # same prompt (frontier model vs smaller/older family memeber)
                             sycophavg[main][0][1] += ans
                     # This is the same thing as above but this is the average for the medium model
                     else:
