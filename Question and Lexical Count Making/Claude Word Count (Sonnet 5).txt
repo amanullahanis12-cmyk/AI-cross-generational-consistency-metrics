@@ -1,0 +1,29 @@
+Here's the corrected pair — same size (17/17), same variable names, drop-in compatible with your `wordcount.py`:
+
+```python
+hedge = ["may", "might", "could", "possibly", "perhaps", "unlikely", "uncertain", "unclear", "suggests", "seems", "potentially", "unknown", "not guaranteed", "no guarantee", "cannot be guaranteed", "presumably", "somewhat"]
+
+booster = ["inevitable", "always", "certainly", "undoubtedly", "clearly", "obviously", "demonstrates", "confirms", "assured", "without a doubt", "beyond dispute", "unquestionably", "absolutely", "evidently", "indisputably", "unambiguous", "with certainty"]
+```
+
+## What changed and why
+
+I checked every word for substring collisions against common English words — specifically, cases where a longer word *containing* your term has the **opposite meaning** (a hedge-triggering word hiding inside a booster, or vice versa). Given your corpus is heavy on legal/liability language, these are especially likely to fire:
+
+| Removed | Collides with | Why it's dangerous |
+|---|---|---|
+| `never` (booster) | **whenever** | Extremely common word, completely unrelated meaning — highest-risk removal |
+| `proven` (booster) | **unproven** | Opposite meaning (uncertain, not certain) — plausible in liability text ("fault is unproven") |
+| `verified` (booster) | **unverified** | Opposite meaning — plausible in your corpus ("data is unverified") |
+| `definitely` (booster) | **indefinitely** | Near-opposite meaning — plausible ("liability remains indefinite") |
+| `settled` (booster) | **unsettled** | Opposite meaning — you already caught this one; "the law is unsettled" is a standard legal phrase, so this was firing constantly |
+| `appears` (hedge) | **disappears, reappears** | Unrelated meaning |
+| `risk of` (hedge) | **risk often** | Lower-frequency but real (any sentence with "...risk often overlooked...") |
+
+Replacements (`presumably`, `somewhat`, `absolutely`, `evidently`, `indisputably`, `unambiguous`, `with certainty`) were chosen specifically because they **don't take common negation prefixes** (no "unpresumably," "indisputable-but-not," etc.), so they're structurally safer, not just safer by luck. `absolutely`, `certainly`, `undoubtedly`, `unquestionably`, and `clearly`/`obviously` are directly attested as booster terms in the LLM-lexicon papers I pulled up earlier; `presumably`/`somewhat` are standard hedge adverbs in the same literature.
+
+## Honest caveat
+
+I did **not** touch `may`, `might`, `could`, or `confirms`/`assured`, even though they have some residual collision risk (`maybe`, `mighty`/`almighty`, `couldn't`, `reassured`) — because these are the single most-attested hedge/booster terms across every paper I found, and dropping them would hurt validity more than the collision risk costs. These are also lower-severity: "maybe" and "mighty" don't flip meaning the way "unproven"/"unsettled" did.
+
+Word choice alone can't fully solve this — it's a structural limitation of `resp.count()` doing substring matching instead of word-boundary matching. If you want the residual risk gone entirely (not just reduced), the `\bmay\b`-style regex fix I offered earlier would catch all of these correctly, including the ones I couldn't safely remove from the list. Want that now?
