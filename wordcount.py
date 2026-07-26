@@ -10,8 +10,8 @@ booster = ["inevitable", "always", "certainly", "undoubtedly", "clearly", "obvio
 
 def lexical(submodels):
     # A dictionary meant for all the averages for each preference
-    #Every first index in each tuple is the uncertainty count and second index is certainty count
-    #Every first tuple element in each list value is lower model and second tuple is medium model
+    #Every first index in each tuple is the uncertainty count and second index is overconfidence count
+    #Every first element in each list value is lower model and second element is medium model
     holder = {"Claude":[(),()],
               "DeepSeek":[(),()],
               "Mistral":[(),()],
@@ -78,5 +78,5 @@ def boosterer(resp: str) -> int:
             totalbooster += resp.count(alt)
     return totalbooster
 
-print(lexical(submodels=submodsanswers))
+#print(lexical(submodels=submodsanswers))
 
