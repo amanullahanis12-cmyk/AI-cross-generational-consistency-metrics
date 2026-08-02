@@ -1,6 +1,4 @@
 from Ais import *
-#All Q2 9.2 is question number 10 or index 9 for question set 3 not 2 only lebled diffferent for logic reasons
-redo = [1,5,6,7,9,9.2]
 
 # Currenlty only structerd for mistral small 4
 def singulartest():
